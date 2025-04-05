@@ -1,0 +1,14 @@
+{
+  "item.fishy.tuna": "Tuna",
+  "item.fishy.koi": "Koi",
+  "item.fishy.catfish": "Catfish",
+  "item.fishy.plaice": "Plaice",
+  "item.fish.size": "Size: %dcm",
+  "item.fish.rarity": "Rarity: %s",
+  "item.fish.food_value": "Hunger: %d, Saturation: %s",
+  "item.fish.rarity.common": "Common",
+  "item.fish.rarity.uncommon": "Uncommon",
+  "item.fish.rarity.rare": "Rare",
+  "item.fish.rarity.super_rare": "Super Rare",
+  "item.fish.rarity.legendary": "Legendary"
+}
