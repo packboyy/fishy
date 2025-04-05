@@ -13,8 +13,8 @@ public class ModItems {
     public static final FishItem KOI = register("koi", new FishItem(FishItem.FishRarity.RARE, new Item.Settings()));
     public static final FishItem CATFISH = register("catfish", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings()));
     public static final FishItem PLAICE = register("plaice", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings()));
-
-
+    public static final FishItem GARFISH = register("garfish", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings()));
+    public static final FishItem BASS = register("bass", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings()));
 
     public static <T extends Item> T register(String name, T item) {
         return Registry.register(Registries.ITEM,Fishy.id(name),item);
