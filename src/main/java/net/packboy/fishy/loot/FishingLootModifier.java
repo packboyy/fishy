@@ -22,6 +22,8 @@ public class FishingLootModifier {
                                 .apply(FishSizeLootFunction.builder(5, 500)))
                         .with(ItemEntry.builder(BASS).weight(60)
                                 .apply(FishSizeLootFunction.builder(5, 500)))
+                        .with(ItemEntry.builder(ANCHOVY).weight(60)
+                                .apply(FishSizeLootFunction.builder(5, 500)))
                         .with(ItemEntry.builder(HERRING).weight(60)
                                 .apply(FishSizeLootFunction.builder(5, 500)))
                         .with(ItemEntry.builder(PLAICE).weight(25)

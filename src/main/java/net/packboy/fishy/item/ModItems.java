@@ -16,6 +16,7 @@ public class ModItems {
     public static final FishItem GARFISH = register("garfish", new FishItem(FishItem.FishRarity.UNCOMMON, new Item.Settings()));
     public static final FishItem BASS = register("bass", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings()));
     public static final FishItem HERRING = register("herring", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings()));
+    public static final FishItem ANCHOVY = register("anchovy", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings()));
 
     public static <T extends Item> T register(String name, T item) {
         return Registry.register(Registries.ITEM,Fishy.id(name),item);
