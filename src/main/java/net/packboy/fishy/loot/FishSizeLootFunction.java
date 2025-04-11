@@ -41,7 +41,7 @@ public class FishSizeLootFunction extends ConditionalLootFunction {
             int size;
             if (max > min) {
                 double randomValue = RANDOM.nextDouble();
-                double power = 3.0;
+                double power = 5.0;
                 double percentage = Math.pow(randomValue, power);
                 size = min + (int)(percentage * (max - min));
             } else {
