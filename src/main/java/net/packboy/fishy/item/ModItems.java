@@ -17,6 +17,10 @@ public class ModItems {
     public static final FishItem BASS = register("bass", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings()));
     public static final FishItem HERRING = register("herring", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings()));
     public static final FishItem ANCHOVY = register("anchovy", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings()));
+    public static final FishItem SWORDFISH = register("swordfish", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings()));
+    public static final FishItem GREEN_LUMPFISH = register("green_lumpfish", new FishItem(FishItem.FishRarity.RARE, new Item.Settings()));
+    public static final FishItem BLUE_LUMPFISH = register("blue_lumpfish", new FishItem(FishItem.FishRarity.RARE, new Item.Settings()));
+    public static final FishItem PINK_LUMPFISH = register("pink_lumpfish", new FishItem(FishItem.FishRarity.RARE, new Item.Settings()));
 
     public static <T extends Item> T register(String name, T item) {
         return Registry.register(Registries.ITEM,Fishy.id(name),item);
