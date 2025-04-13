@@ -22,7 +22,7 @@ public class Fishy implements ModInitializer {
 	public void onInitialize() {
 		LOGGER.info("Hello Fabric world!");
 		ModItems.init();
-		FishingLootModifier.init();
+		FishingLootModifier.ModifyFishTable();
 	}
 
 	public static Identifier id(String path) {
