@@ -10,7 +10,7 @@ public class ModItems {
     public static final Identifier SET_FISH_SIZE_ID = new Identifier("fishy", "set_fish_size");
 
     public static final FishItem TUNA = register("tuna", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings()));
-    public static final FishItem KOI = register("koi", new FishItem(FishItem.FishRarity.RARE, new Item.Settings()));
+    public static final FishItem KOI = register("koi", new FishItem(FishItem.FishRarity.LEGENDARY, new Item.Settings()));
     public static final FishItem CATFISH = register("catfish", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings()));
     public static final FishItem PLAICE = register("plaice", new FishItem(FishItem.FishRarity.UNCOMMON, new Item.Settings()));
     public static final FishItem GARFISH = register("garfish", new FishItem(FishItem.FishRarity.UNCOMMON, new Item.Settings()));
@@ -21,6 +21,8 @@ public class ModItems {
     public static final FishItem GREEN_LUMPFISH = register("green_lumpfish", new FishItem(FishItem.FishRarity.RARE, new Item.Settings()));
     public static final FishItem BLUE_LUMPFISH = register("blue_lumpfish", new FishItem(FishItem.FishRarity.RARE, new Item.Settings()));
     public static final FishItem PINK_LUMPFISH = register("pink_lumpfish", new FishItem(FishItem.FishRarity.RARE, new Item.Settings()));
+    public static final FishItem CARP = register("carp", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings()));
+    public static final FishItem RED_HERRING = register("red_herring", new FishItem(FishItem.FishRarity.RARE, new Item.Settings()));
 
     public static <T extends Item> T register(String name, T item) {
         return Registry.register(Registries.ITEM,Fishy.id(name),item);
