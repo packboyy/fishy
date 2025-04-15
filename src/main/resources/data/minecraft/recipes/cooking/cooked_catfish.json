@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "fishy:catfish"
+  },
+  "result": "fishy:cooked_catfish",
+  "experience": 0.35,
+  "cookingtime": 200,
+}

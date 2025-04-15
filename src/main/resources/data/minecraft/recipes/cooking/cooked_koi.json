@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "fishy:koi"
+  },
+  "result": "fishy:cooked_koi",
+  "experience": 0.35,
+  "cookingtime": 200
+}

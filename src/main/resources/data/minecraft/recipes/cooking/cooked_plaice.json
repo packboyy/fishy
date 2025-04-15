@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "fishy:plaice"
+  },
+  "result": "fishy:cooked_plaice",
+  "experience": 0.35,
+  "cookingtime": 200
+}

@@ -26,9 +26,9 @@ public class FishItem extends Item {
     private static final float MAX_SATURATION = 24.0f;
 
     public enum FishRarity {
-        COMMON(Formatting.WHITE, "item.fish.rarity.common"),
-        UNCOMMON(Formatting.GREEN, "item.fish.rarity.uncommon"),
-        RARE(Formatting.BLUE, "item.fish.rarity.rare"),
+        COMMON(Formatting.GREEN, "item.fish.rarity.common"),
+        UNCOMMON(Formatting.BLUE, "item.fish.rarity.uncommon"),
+        RARE(Formatting.RED, "item.fish.rarity.rare"),
         SUPER_RARE(Formatting.LIGHT_PURPLE, "item.fish.rarity.super_rare"),
         LEGENDARY(Formatting.GOLD, "item.fish.rarity.legendary");
 
@@ -39,28 +39,22 @@ public class FishItem extends Item {
             this.color = color;
             this.translationKey = translationKey;
         }
-
-        public Formatting getColor() {
-            return color;
-        }
-
-        public String getTranslationKey() {
-            return translationKey;
-        }
-
         public Text getText() {
             return Text.translatable(translationKey).formatted(color);
         }
     }
 
     private final FishRarity fishRarity;
+    private final boolean IsCooked;
 
-    public FishItem(FishRarity fishRarity, Settings settings) {
+
+    public FishItem(FishRarity fishRarity, Settings settings, boolean isCooked) {
         super(settings.food(new FoodComponent.Builder()
-                .hunger(BASE_HUNGER)
+                .hunger(isCooked ? BASE_HUNGER * 2 : BASE_HUNGER)
                 .saturationModifier(BASE_SATURATION)
                 .build()));
         this.fishRarity = fishRarity;
+        IsCooked = isCooked;
     }
 
     public static int getSize(ItemStack stack) {

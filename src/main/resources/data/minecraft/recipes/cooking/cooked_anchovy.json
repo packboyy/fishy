@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "fishy:anchovy"
+  },
+  "result": "fishy:cooked_anchovy",
+  "experience": 0.35,
+  "cookingtime": 200
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "fishy:garfish"
+  },
+  "result": "fishy:cooked_garfish",
+  "experience": 0.35,
+  "cookingtime": 200
+}

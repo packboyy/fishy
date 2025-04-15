@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "fishy:pink_lumpfish"
+  },
+  "result": "fishy:cooked_lumpfish",
+  "experience": 0.35,
+  "cookingtime": 200
+}

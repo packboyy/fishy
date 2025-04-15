@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "fishy:red_herring"
+  },
+  "result": "fishy:cooked_herring",
+  "experience": 0.35,
+  "cookingtime": 200
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "fishy:tuna"
+  },
+  "result": "fishy:cooked_tuna",
+  "experience": 0.35,
+  "cookingtime": 200
+}
