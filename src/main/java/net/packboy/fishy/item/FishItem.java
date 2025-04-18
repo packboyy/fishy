@@ -1,24 +1,27 @@
 package net.packboy.fishy.item;
 
-import net.minecraft.client.item.TooltipContext;
+import com.mojang.serialization.Codec;
+import net.minecraft.component.ComponentType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.FoodComponent;
-import net.minecraft.nbt.NbtCompound;
+import net.minecraft.component.type.FoodComponent;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
-import java.util.List;
-import java.util.Random;
-
 public class FishItem extends Item {
-    private static final String SIZE_KEY = "FishSize";
-    private static final Random RANDOM = new Random();
+    public static final ComponentType<Integer> FISH_SIZE = Registry.register(
+            Registries.DATA_COMPONENT_TYPE,
+            Identifier.of("fishy", "fish_size"),
+            ComponentType.<Integer>builder().codec(Codec.INT).build()
+    );
 
     private static final int BASE_HUNGER = 1;
     private static final float BASE_SATURATION = 0.1f;
@@ -44,13 +47,12 @@ public class FishItem extends Item {
         }
     }
 
-    private final FishRarity fishRarity;
+    public final FishRarity fishRarity;
     private final boolean IsCooked;
-
 
     public FishItem(FishRarity fishRarity, Settings settings, boolean isCooked) {
         super(settings.food(new FoodComponent.Builder()
-                .hunger(isCooked ? BASE_HUNGER * 2 : BASE_HUNGER)
+                .nutrition(isCooked ? BASE_HUNGER * 2 : BASE_HUNGER)
                 .saturationModifier(BASE_SATURATION)
                 .build()));
         this.fishRarity = fishRarity;
@@ -58,17 +60,15 @@ public class FishItem extends Item {
     }
 
     public static int getSize(ItemStack stack) {
-        NbtCompound nbt = stack.getNbt();
-        if (nbt != null && nbt.contains(SIZE_KEY)) {
-            return nbt.getInt(SIZE_KEY);
+        if (stack.contains(FISH_SIZE)) {
+            return stack.get(FISH_SIZE);
         }
         return 1;
     }
 
     public static void setSize(ItemStack stack, int size) {
         int clampedSize = Math.max(1, Math.min(size, 4096));
-        NbtCompound nbt = stack.getOrCreateNbt();
-        nbt.putInt(SIZE_KEY, clampedSize);
+        stack.set(FISH_SIZE, clampedSize);
     }
 
     private int getHungerFromSize(int size) {
@@ -84,14 +84,6 @@ public class FishItem extends Item {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("item.fish.rarity", fishRarity.getText()));
-        int size = getSize(stack);
-        tooltip.add(Text.translatable("item.fish.size", size).formatted(Formatting.GRAY));
-        super.appendTooltip(stack, world, tooltip, context);
-    }
-
-    @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         if (user instanceof PlayerEntity player && !world.isClient) {
             int size = getSize(stack);
@@ -103,7 +95,7 @@ public class FishItem extends Item {
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+    public ActionResult use(World world, PlayerEntity user, Hand hand) {
         return super.use(world, user, hand);
     }
 }

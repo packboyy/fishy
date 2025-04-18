@@ -7,8 +7,6 @@ import net.minecraft.util.Identifier;
 import net.packboy.fishy.Fishy;
 
 public class ModItems {
-    public static final Identifier SET_FISH_SIZE_ID = new Identifier("fishy", "set_fish_size");
-
     public static final FishItem TUNA = register("tuna", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings(), false));
     public static final FishItem COOKED_TUNA = register("cooked_tuna", new FishItem(FishItem.FishRarity.COMMON, new Item.Settings(), true));
 
